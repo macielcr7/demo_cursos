@@ -1,0 +1,45 @@
+<ion-header>
+  	<ion-toolbar>
+    	<ion-buttons start>
+      		<button ion-button icon-only color="royal">
+        		<ion-icon name="user"></ion-icon>
+      		</button>
+    	</ion-buttons>
+    	<ion-title>Dashboard</ion-title>
+  	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-grid class="animate__animated animate__backInRight" style="text-align: center;">
+	  	<ion-row>
+	    	<ion-col col-12><b style="color:#2d2d2d;">CURSOS E TRAINAMENTOS</b></ion-col>
+	  	</ion-row>
+	  	<ion-row>
+	    	<ion-col col-12>Selecione o curso ou treinamento que deseja</ion-col>
+	  	</ion-row>
+	  	<ion-row>
+	    	<ion-col col-12><ion-searchbar placeholder="Buscar cursos..." (ionInput)="getItems($event)"></ion-searchbar></ion-col>
+	  	</ion-row>
+	</ion-grid>
+
+	<ion-grid>
+	  	<ion-row>
+	    	<ion-col *ngFor="let item of itemsList" class="animate__animated animate__backInLeft" col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3>
+	    		<div class="box-decorator" (click)="open(item)">
+	    			<div style="padding: 5px;text-align: center;">
+	    				<b style="color:#2d2d2d;">{{ item.titulo }}</b>
+	    			</div>
+	    			<div>
+	    				<img src="{{ item.imagem_destaque }}">
+	    			</div>
+	    		</div>
+	    	</ion-col>
+	  	</ion-row>
+	</ion-grid>
+
+	<div class="animate__animated animate__backInUp container-no-recs" padding text-center [hidden]="itemsList.length > 0">
+        <ion-icon name="alert" class="icon-5em"></ion-icon>
+        <h2 class="slide-title">Sem Registros</h2>
+        <p>Nenhum curso ou treinamento encontrado no sistema.</p>
+    </div>
+</ion-content>

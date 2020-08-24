@@ -1,0 +1,33 @@
+<ion-header>
+  	<ion-navbar>
+    	<ion-title>{{ item.titulo }}</ion-title>
+  	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<div class="animate__animated animate__backDown">
+		<img src="{{ item.imagem_destaque }}">
+	</div>
+	<div class="container-grid animate__animated animate__backInUp">
+		<ion-grid>
+		  	<ion-row>
+		  		<ion-col [innerHTML]="item.descricao"></ion-col>
+		  	</ion-row>
+		  	<ion-row>
+		    	<ion-col *ngFor="let item2 of itemsList" class="animate__animated animate__backInLeft" col-6 col-lg-4 col-xl-3>
+		    		<div class="box-decorator">
+		    			<div>
+		    				<img src="{{ item2.imagem }}">
+		    			</div>
+		    		</div>
+		    	</ion-col>
+		  	</ion-row>
+		</ion-grid>
+	</div>
+
+	<div class="animate__animated animate__backInUp container-no-recs" padding text-center [hidden]="itemsList.length > 0">
+        <ion-icon name="alert" class="icon-5em"></ion-icon>
+        <h2 class="slide-title">Sem Registros</h2>
+        <p>Nenhum curso ou treinamento encontrado no sistema.</p>
+    </div>
+</ion-content>
