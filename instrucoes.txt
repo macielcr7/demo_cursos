@@ -1,5 +1,7 @@
 pastas
 	app:
+		npm install 
+		
 		alterar o IP Setado para o IP local da maquina onde o apache vai rodar 
 		nos arquivos
 
