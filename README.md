@@ -2,6 +2,7 @@
 demonstracao de cursos
 
 pastas
+
 	app:
 		npm install 
 		
@@ -15,6 +16,7 @@ pastas
 		public PARENT_BASE_API:string = 'http://192.168.10.103/ezoom/cursoV1/site/index.php/apiCursos/';
 
 	site:
+		chmod -R 775 uplods/
 		trocar os dados de banco
 		php composer.phar install
 		importar o banco.sql
